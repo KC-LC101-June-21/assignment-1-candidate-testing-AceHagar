@@ -38,8 +38,24 @@ Your Answer: ${candidateAnswers[i]}
 Correct Answer: ${correctAnswers[i]}`)
 }
 
-  let grade;
-  
+  let grade = [];
+  for (let i = 0; i < correctAnswers.length; i ++){
+  if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()){
+    grade = grade + "1";
+  }
+}
+
+grade = grade.split('');
+
+percentageCorrect = ((grade.length / 5) * 100)
+let score = ''
+if (percentageCorrect >= 80) {
+  score = "PASSED";
+} else {
+  score = "FAILED";
+}
+console.log(`>>> Overall Grade: ${percentageCorrect}% (${grade.length} out of 5 responses correct) <<<
+>>> Status: ${score}`)
 
   return grade;
 }
@@ -49,10 +65,10 @@ function runProgram() {
   // TODO 1.1c: Ask for candidate's name //
   
   askQuestion();
-  console.log(candidateName);
+  console.log("Candidate Name: " + candidateName);
   gradeQuiz(this.candidateAnswers);
 }
-//console.log(candidateAnswers)
+ 
 // Don't write any code below this line //
 // And don't change these or your program will not run as expected //
 module.exports = {
