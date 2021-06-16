@@ -16,7 +16,7 @@ let candidateAnswers = [];
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
   candidateName = input.question("What is your name? ")
-  console.log("Greetings " + candidateName + "!")
+  //console.log("Greetings " + candidateName + "!")
 }
 
 
@@ -26,16 +26,16 @@ function askQuestion() {
     candidateAnswers[i] = input.question(questions[i])
   }
 
-console.log(candidateAnswers)
+//console.log(candidateAnswers)
 
 }
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
 for (i = 0; i < questions.length; i++){
-  console.log(`The questions was: ${questions[i]}
-  Your answer was: ${candidateAnswers[i]}
-   Correct answer: ${correctAnswers[i]}`)
+  console.log(`${i +1}) ${questions[i]}
+Your Answer: ${candidateAnswers[i]}
+Correct Answer: ${correctAnswers[i]}`)
 }
 
   let grade;
@@ -49,9 +49,10 @@ function runProgram() {
   // TODO 1.1c: Ask for candidate's name //
   
   askQuestion();
+  console.log(candidateName);
   gradeQuiz(this.candidateAnswers);
 }
-console.log(candidateAnswers)
+//console.log(candidateAnswers)
 // Don't write any code below this line //
 // And don't change these or your program will not run as expected //
 module.exports = {
