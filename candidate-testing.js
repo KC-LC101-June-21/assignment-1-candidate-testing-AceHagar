@@ -38,23 +38,22 @@ Your Answer: ${candidateAnswers[i]}
 Correct Answer: ${correctAnswers[i]}`)
 }
 
-  let grade = [];
+  let grade = 0;
   for (let i = 0; i < correctAnswers.length; i ++){
-  if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()){
-    grade = grade + "1";
+    if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()){
+    grade += 1
+    //grade = grade.split('');
   }
 }
 
-grade = grade.split('');
-
-percentageCorrect = ((grade.length / 5) * 100)
+percentageCorrect = ((grade / 5) * 100)
 let score = ''
 if (percentageCorrect >= 80) {
   score = "PASSED";
 } else {
   score = "FAILED";
 }
-console.log(`>>> Overall Grade: ${percentageCorrect}% (${grade.length} out of 5 responses correct) <<<
+console.log(`>>> Overall Grade: ${percentageCorrect}% (${grade} out of 5 responses correct) <<<
 >>> Status: ${score}`)
 
   return grade;
