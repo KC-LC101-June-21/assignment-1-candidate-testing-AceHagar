@@ -25,8 +25,8 @@ function askQuestion() {
   for (i = 0; i < questions.length; i++){
     candidateAnswers[i] = input.question(questions[i])
   }
+console.clear()
 
-//console.log(candidateAnswers)
 
 }
 function gradeQuiz(candidateAnswers) {
